@@ -1,0 +1,86 @@
+function show(){
+    return 1000;
+}
+undefined
+var e = show;
+undefined
+var r = 100;
+undefined
+typeof e;
+'function'
+e();
+1000
+var f = show();
+undefined
+f;
+1000
+function show(){
+    for(let i = 1; i<=1000000;i++){
+        for(j= 1; j<=10000; j++){
+            
+        }
+    }
+    return 1000;
+}
+undefined
+var f = show();
+console.log(f);
+VM389:2 1000
+undefined
+var ee = 1000;
+undefined
+var f = show();
+console.log(f);
+VM398:2 1000
+undefined
+var f = show();
+console.log("do something else ");
+VM425:2 do something else 
+undefined
+function show(callBackFn){
+    setTimeout(function(){
+         callBackFn(1000);
+    }, 5000);
+   // return 1000;
+   
+}
+undefined
+function result(r){
+    console.log('Result ', r);
+}
+
+undefined
+show(result);
+console.log('I am not waiting i am keep running'):
+VM812:2 Uncaught SyntaxError: Unexpected token ':'
+show(result);
+console.log('I am not waiting i am keep running');
+VM820:2 I am not waiting i am keep running
+undefined
+VM651:2 Result  1000
+function show(callBackFn){
+    setTimeout(function(){
+         callBackFn(1000);
+    }, 0);
+   // return 1000;
+   
+}
+undefined
+show(result);
+console.log('I am not waiting i am keep running');
+VM831:2 I am not waiting i am keep running
+undefined
+VM651:2 Result  1000
+var arr = [10,20,30,90,100,1];
+undefined
+arr.filter(function(a){
+  return a>30;  
+});
+(2) [90, 100]
+arr.reduce((acc, e)=>{
+    if(e>30){
+        acc.push(e);
+    }
+    return acc;
+}, []);
+(2) [90, 100]

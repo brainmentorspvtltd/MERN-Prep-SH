@@ -1,0 +1,6 @@
+function add(){
+    return 10,20;
+}
+undefined
+add();
+20

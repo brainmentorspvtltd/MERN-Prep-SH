@@ -1,0 +1,104 @@
+function show(){
+    // var a; // Variable Hoisting
+    console.log(a);
+    var a  =10;
+    if(10>2){
+        var a = 20;
+    }
+    var a = 30;
+    console.log(a);
+    
+}
+undefined
+show();
+VM189:3 undefined
+VM189:9 30
+undefined
+a;
+VM215:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM215:1
+a=100;
+100
+window.a;
+100
+function show(){
+    'use strict'
+    b = 20;
+    console.log(b);
+    // var a; // Variable Hoisting
+    console.log(a);
+    var a  =10;
+    if(10>2){
+        var a = 20;
+    }
+    var a = 30;
+    console.log(a);
+    
+}
+undefined
+function show(){
+   
+    
+    console.log(a);
+    let a  =10;
+    if(10>2){
+        let a = 20;
+    }
+    let a = 30;
+    console.log(a);
+    
+}
+VM380:9 Uncaught SyntaxError: Identifier 'a' has already been declared
+function show(){
+    //let a;
+    // TDZ
+    console.log(a);
+    let a  =10;
+    if(10>2){
+        let a = 20;
+    }
+   // let a = 30;
+    console.log(a);
+    
+}
+undefined
+show();
+VM400:4 Uncaught ReferenceError: Cannot access 'a' before initialization
+    at show (<anonymous>:4:17)
+    at <anonymous>:1:1
+show @ VM400:4
+(anonymous) @ VM419:1
+function show(){
+    //let a;
+    // TDZ
+    //console.log(a);
+    let a  =10;
+    for(let j = 1; j<=5; j++){
+        if(j>2){
+            let a = 90;
+        }
+    if(10>2){
+        let a = 20;
+    }
+    }
+   // let a = 30;
+    console.log(a);
+    
+}
+undefined
+var t = 100;
+undefined
+let t2 = 900;
+undefined
+window.t;
+100
+window.t2;
+undefined
+typeof window;
+'object'
+window.t2 = 1000;
+1000
+show();
+VM481:15 10
+undefined

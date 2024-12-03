@@ -1,0 +1,18 @@
+var arr = [10,20,30];
+undefined
+typeof arr;
+'object'
+arr instanceof Array;
+true
+typeof Array;
+'function'
+arr instanceof Object;
+true
+// Object - GOD fn
+undefined
+arr;
+(3) [10, 20, 30]
+arr.toString();
+'10,20,30'
+typeof Object;
+'function'

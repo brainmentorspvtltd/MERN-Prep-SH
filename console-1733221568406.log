@@ -1,0 +1,39 @@
+var a = Symbol();
+undefined
+a;
+Symbol()
+typeof a;
+'symbol'
+var b = Symbol();
+undefined
+a == b;
+false
+a===b;
+false
+10 == "10";
+true
+10==="10"
+false
+var a= 10;
+undefined
+a = 20;
+20
+a = "Abcd";
+'Abcd'
+typeof a;
+'string'
+var x = 10;
+undefined
+x + 20;
+30
+x;
+10
+x = x + 20;
+30
+var arr =[10,20,30];
+
+undefined
+arr.push(999);
+4
+arr;
+(4) [10, 20, 30, 999]

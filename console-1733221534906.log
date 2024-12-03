@@ -1,0 +1,248 @@
+var a= 10;
+undefined
+window.a;
+10
+let b = 20;
+undefined
+window.b;
+undefined
+const MAX = 100;
+undefined
+MAX++;
+VM188:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM188:1
+const arr = [100,200,300];
+undefined
+arr.push(8888);
+4
+arr;
+(4) [100, 200, 300, 8888]
+const e = new Array(5);
+undefined
+e;
+(5) [empty × 5]
+e[0] =100;
+100
+e;
+(5) [100, empty × 4]
+e.push(888);
+6
+e;
+(6) [100, empty × 4, 888]
+e=[999];
+VM482:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:2
+(anonymous) @ VM482:1
+function disp(r){
+    function inner(w){
+        var g = 10;
+        return  g + w +r;
+    }
+}
+undefined
+disp(10)(20);
+VM631:1 Uncaught TypeError: disp(...) is not a function
+    at <anonymous>:1:9
+(anonymous) @ VM631:1
+function disp(r){
+    return function inner(w){
+        var g = 10;
+        return  g + w +r;
+    }
+}
+undefined
+disp(10)(20);
+40
+function disp(r, r2, r3){
+    return function inner(w){
+        var g = 10;
+        return  g + w +r;
+    }
+}
+undefined
+var fn =disp(10,20,30);
+undefined
+fn(90);
+110
+console.dir(fn);
+VM843:1 ƒ inner(w)arguments: nullcaller: nulllength: 1name: "inner"prototype: {}[[FunctionLocation]]: VM708:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[3]0: Closure (disp) {r: 10}1: Script {b: 20, MAX: 100, arr: Array(4), e: Array(6)}2: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+function Orders(oid){
+    function add(price){
+        console.log(oid, price)
+    }
+    function remove(oid){
+        
+    }
+    return  {add, remove};
+}
+undefined
+Orders(10);
+{add: ƒ, remove: ƒ}
+Orders(10).add(10);
+VM1039:3 10 10
+undefined
+function Orders(oid){
+    function add(price){
+        console.log(oid, price)
+    }
+    function remove(oid){
+        
+    }
+    return  [add, remove];
+}
+undefined
+Orders(1)[0](1000);
+VM1100:3 1 1000
+undefined
+function count(){
+    let c = 0;
+    c = c + 1;
+    return  c;
+}
+undefined
+count();
+1
+count();
+1
+count();
+1
+count();
+1
+function count(){
+    var c = 0;
+    c = c + 1;
+    return  c;
+}
+undefined
+count();
+1
+count();
+1
+count();
+1
+var c=0;
+function count(){
+   // var c = 0;
+    c = c + 1;
+    return  c;
+}
+undefined
+count();
+1
+count();
+2
+count();
+3
+count();
+4
+c =0;
+0
+count();
+1
+c="Amit";
+'Amit'
+count();
+'Amit1'
+count();
+'Amit11'
+count();
+'Amit111'
+count();
+'Amit1111'
+count();
+'Amit11111'
+function init(){
+var c=0;
+return function count(){
+   // var c = 0;
+    c = c + 1;
+    return  c;
+}
+}
+undefined
+var f = init();
+undefined
+f();
+1
+f();
+2
+f();
+3
+f();
+4
+f();
+5
+var p  = 1000;
+undefined
+var g = p * undefined;
+undefined
+g;
+NaN
+"Amit " + 100;
+'Amit 100'
+var g = p * undefined;
+undefined
+g;
+NaN
+var g = 1000;
+undefined
+typeof g;
+'number'
+g = 100.29;
+100.29
+typeof g;
+'number'
+g =11111111111;
+11111111111
+typeof g;
+'number'
+g = g * undefined;
+NaN
+typeof g;
+'number'
+g =1000/0;
+Infinity
+typeof g;
+'number'
+NaN === NaN
+false
+NaN == NaN
+false
+function show(){
+    return 1000;
+}
+undefined
+function disp(){
+    return 2000;
+}
+undefined
+show + disp;
+'function show(){\n    return 1000;\n}function disp(){\n    return 2000;\n}'
+100 + 200;
+300
+true + true;
+2
+[100,2000] + [90,100];
+'100,200090,100'
+[100,200].toString();
+'100,200'
+class A{}
+undefined
+typeof A;
+'function'
+var w = [100,200];
+undefined
+typeof w;
+'object'
+w;
+(2) [100, 200]
+w.push(100);
+3
+w.length;
+3
+w instanceof Array;
+true
+typeof Array;
+'function'
