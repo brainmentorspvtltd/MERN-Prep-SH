@@ -1,0 +1,68 @@
+function show(){
+    console.log(" i am the show ");
+}
+undefined
+show();
+VM118:2  i am the show 
+undefined
+show(10,20);
+VM118:2  i am the show 
+undefined
+show(1,2,3,4);
+VM118:2  i am the show 
+undefined
+show("10", "Amit", true, [10,20]);
+VM118:2  i am the show 
+undefined
+console.dir(show);
+VM399:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {}[[FunctionLocation]]: VM118:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+var add = new Function("add","x","y");
+undefined
+add;
+ƒ anonymous(add,x
+) {
+y
+}
+var add = new Function("x","y","return x + y");
+undefined
+add;
+ƒ anonymous(x,y
+) {
+return x + y
+}
+add(10,20);
+30
+typeof Function;
+'function'
+function show(){
+    console.log(" i am the show ", arguments.length);
+}
+undefined
+show();
+VM731:2  i am the show  0
+undefined
+show(1,2,3,4);
+VM731:2  i am the show  4
+undefined
+show(1,2,3,4,5);
+VM731:2  i am the show  5
+undefined
+function jQuery(){
+    console.log(' i am jquery ');
+}
+undefined
+var $ = jQuery;
+undefined
+$();
+VM917:2  i am jquery 
+undefined
+$(this);
+VM917:2  i am jquery 
+undefined
+$("p");
+VM917:2  i am jquery 
+undefined
+$(document);
+VM917:2  i am jquery 
+undefined

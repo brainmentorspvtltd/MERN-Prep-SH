@@ -1,0 +1,7 @@
+add();
+var add = function(){
+    console.log("I am the add ");
+}
+VM165:1 Uncaught TypeError: add is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM165:1

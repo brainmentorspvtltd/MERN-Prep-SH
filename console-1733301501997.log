@@ -1,0 +1,48 @@
+var dhoni = {name:'MS Dhoni' , age:43 , 100: 51, 50 :80, "city name":'Delhi'};
+undefined
+typeof dhoni;
+'object'
+dhoni instanceof Object;
+true
+dhoni =null;
+null
+dhoni.name;
+VM279:1 Uncaught TypeError: Cannot read properties of null (reading 'name')
+    at <anonymous>:1:7
+(anonymous) @ VM279:1
+typeof null;
+'object'
+dhoni instanceof Object;
+false
+var a =10;
+undefined
+typeof a;
+'number'
+a = null;
+null
+typeof a;
+'object'
+var t;
+undefined
+t = 100;
+100
+null == undefined;
+true
+null === undefined;
+false
+y;
+VM575:1 Uncaught ReferenceError: y is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM575:1
+10 + undefined;
+NaN
+10 + null;
+10
+eval(10+20 * 5);
+110
+var exp = "10+20 * 5";
+undefined
+eval(exp);
+110
+eval("alert('Hello')");
+undefined
