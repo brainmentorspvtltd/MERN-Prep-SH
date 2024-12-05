@@ -1,0 +1,115 @@
+function cube(num , time){
+    const promise = new Promise((resolve, reject)=>{
+         // Async
+        setTimeout(()=>{
+            resolve(num **3);
+        }, time);
+    });
+    return promise;
+   
+}
+const promise = cube(3, 3000);
+promise.then(data=>{
+    const p = cube(data, 5000);
+    p.then(d=>{
+        const p2 = cube(d, 7000);
+        p2.then(e=>{
+            resolve(e + d + data);
+        }).catch(err=>console.log(err));
+    }).catch(error=>console.log(error));
+}).catch(err=>console.log(err));
+Promise {<pending>}
+VM826:18 ReferenceError: resolve is not defined
+    at <anonymous>:17:13
+function cube(num , time){
+    const promise = new Promise((resolve, reject)=>{
+         // Async
+        setTimeout(()=>{
+            resolve(num **3);
+        }, time);
+    });
+    return promise;
+   
+}
+const promise = cube(3, 3000);
+promise.then(data=>{
+    const p = cube(data, 5000);
+    p.then(d=>{
+        const p2 = cube(d, 7000);
+        p2.then(e=>{
+            console.log(e + d + data);
+        }).catch(err=>console.log(err));
+    }).catch(error=>console.log(error));
+}).catch(err=>console.log(err));
+Promise {<pending>}
+VM840:17 7625597504697
+function cube(num , time){
+    const promise = new Promise((resolve, reject)=>{
+         // Async
+        setTimeout(()=>{
+            resolve(num **3);
+        }, time);
+    });
+    return promise;
+   
+}
+const promise = cube(3, 3000);
+promise.then(data=>{
+    console.log('First Result ' , data);
+    const p = cube(data, 5000);
+    p.then(d=>{
+        console.log('Second Result ' , d);
+        const p2 = cube(d, 7000);
+        p2.then(e=>{
+            console.log('Third Result ' , e);
+            console.log(e + d + data);
+        }).catch(err=>console.log(err));
+    }).catch(error=>console.log(error));
+}).catch(err=>console.log(err));
+Promise {<pending>}
+VM938:13 First Result  27
+VM938:16 Second Result  19683
+VM938:19 Third Result  7625597484987
+VM938:20 7625597504697
+function total(){
+    try{
+    const r =await cube(3);
+    const r2 =await cube(r);
+    const r3 =await cube(r2); 
+    console.log(r + r2 + r3);    
+    }
+    catch(err){
+        console.log('Error is ', e);
+    }
+}
+VM1156:3 Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules
+async function total(){
+    try{
+    const r =await cube(3);
+    const r2 =await cube(r);
+    const r3 =await cube(r2); 
+    console.log(r + r2 + r3);    
+    }
+    catch(err){
+        console.log('Error is ', e);
+    }
+}
+undefined
+total();
+Promise {<pending>}
+VM1164:6 7625597504697
+async function total(){
+    try{
+    const r =await cube(3, 3000);
+    const r2 =await cube(r, 5000);
+    const r3 =await cube(r2,7000); 
+    console.log(r + r2 + r3);    
+    }
+    catch(err){
+        console.log('Error is ', e);
+    }
+}
+undefined
+total();
+Promise {<pending>}
+VM1247:6 7625597504697

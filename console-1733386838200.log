@@ -1,0 +1,156 @@
+console.log("Start ");
+setTimeout(()=>{
+    console.log("I Will Run After 3 Sec ");
+}, 3000);
+console.log("End ");
+VM226:1 Start 
+VM226:5 End 
+undefined
+VM226:3 I Will Run After 3 Sec 
+const t = setInterval(()=>{
+    console.log('I am keep Running ');
+},3000);
+undefined
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+VM354:2 I am keep Running 
+clearInterval(t);
+undefined
+const t = setInterval(()=>{
+    console.log('I am keep Running ');
+},3000);
+undefined
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+VM499:2 I am keep Running 
+clearInterval(t);
+undefined
+function doWork(){
+    setTimeout(()=>{
+        console.log("I will run after 3 sec ");
+        return "I am Done ";
+    })
+}
+console.log("Start ");
+const r = doWork();
+console.log("End ", r);
+
+VM815:7 Start 
+VM815:9 End  undefined
+undefined
+VM815:3 I will run after 3 sec 
+function doWork(){
+    setTimeout(()=>{
+        console.log("I will run after 3 sec ");
+        return "I am Done ";
+    }, 3000)
+}
+console.log("Start ");
+const r = doWork();
+console.log("End ", r);
+
+VM835:7 Start 
+VM835:9 End  undefined
+undefined
+VM835:3 I will run after 3 sec 
+
+function getResult(r){
+    console.log("Now the result is ", r);
+   // setTimeout(()=>{},3000);
+}
+function error(e){
+    console.log("Fail ", e);
+}
+function doWork(callBackFn, fail){
+    setTimeout(()=>{
+        console.log("I will run after 3 sec ");
+        // if(10>5){
+        //     fail("Something went wrong ");
+        // }
+        //return "I am Done ";
+        callBackFn("I am Done ");
+    }, 3000)
+}
+console.log("Start ");
+doWork(getResult, error);
+//const r = doWork();
+console.log("End ", r);
+
+VM1217:19 Start 
+VM1217:22 End  undefined
+undefined
+VM1217:11 I will run after 3 sec 
+VM1217:3 Now the result is  I am Done 
+
+
+function doWork(){
+    const pr = new Promise((resolve, reject)=>{
+             // Async 
+    setTimeout(()=>{
+        console.log("I will run after 3 sec ");
+        
+        resolve("I am Done ");
+    }, 3000)
+    });  
+    return pr;
+   
+}
+console.log("Start ");
+const promise = doWork();
+
+console.log("End ", promise); // Pending
+promise.then(data=>{
+    console.log(data);
+}).catch(err=>console.log('Error is ', err));
+
+VM1589:15 Start 
+VM1589:18 End  Promise {<pending>}
+Promise {<pending>}
+VM1589:7 I will run after 3 sec 
+VM1589:20 I am Done 
+promise;
+Promise {<fulfilled>: 'I am Done '}
+
+
+function doWork(){
+    const pr = new Promise((resolve, reject)=>{
+             // Async 
+    setTimeout(()=>{
+        console.log("I will run after 3 sec ");
+        reject("OOPS Something went wrong ");
+       // resolve("I am Done ");
+    }, 3000)
+    });  
+    return pr;
+   
+}
+console.log("Start ");
+const promise = doWork();
+
+console.log("End ", promise); // Pending
+promise.then(data=>{
+    console.log(data);
+}).catch(err=>console.log('Error is ', err));
+
+VM1649:15 Start 
+VM1649:18 End  Promise {<pending>}
+Promise {<pending>}
+VM1649:7 I will run after 3 sec 
+VM1649:21 Error is  OOPS Something went wrong 
+promise;
+Promise {<rejected>: 'OOPS Something went wrong '}
